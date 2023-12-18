@@ -1,0 +1,41 @@
+.my-pkeys-btn {
+    color: #eb9f11;
+    background-color: #ffecb3;
+    border-color: #eb9f11;
+    border-width: 1px!important
+}
+
+@media screen and (max-width:2000px) {
+    .my-pcat-img {
+        height: 256px;
+        width: 256px
+    }
+}
+
+@media screen and (max-width:1500px) {
+    .my-pcat-img {
+        height: 128px;
+        width: 128px
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .my-pcat-img {
+        height: 128px;
+        width: 128px
+    }
+}
+
+@media screen and (max-width:800px) {
+    .my-pcat-img {
+        height: 256px!important;
+        width: 256px
+    }
+}
+
+@media screen and (max-width:600px) {
+    .my-pcat-img {
+        height: 128px;
+        width: 128px
+    }
+}

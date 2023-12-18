@@ -1,0 +1,154 @@
+<!--{#login/templates/login/login.html#}-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>register</title>
+
+    <meta name="referrer" content="never">
+    <meta name="viewport" content="width=device-width">
+
+    <style>
+        .loader {
+            background-color: transparent !important;
+        }
+
+        .loader img {
+            opacity: 1;
+        }
+    </style>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#db547c">
+
+    <script src="/static/js/page-pcomic-register.js"></script>
+    <link rel="stylesheet" href="/static/css/splide.min.css">
+    <link rel="stylesheet" href="/static/css/style.min.css">
+    <link rel="stylesheet" href="/static/css/picstyle.min.css">
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/splide.min.js"></script>
+    <script src="/static/js/bootstrap.js"></script>
+    <script src="/static/js/ueserheader.min.js"></script>
+    <script type="text/javascript" src="/static/js/js(1)" async=""></script>
+</head>
+
+<body class="bg-white modeset mx-auto" data-instant-allow-query-string="" data-instant-intensity="mousedown" style="">
+    <!-- <div style="margin: 15% 40%;"> -->
+    <!--    <h1>注册！</h1>-->
+    <!--    <form action="/register/" method="post">-->
+    <!--        {% csrf_token %}-->
+    <!--        <p>-->
+    <!--            <label for="id_register_username">用户名：</label>-->
+    <!--            <input type="text" id="id_register_username" placeholder="用户名" name="register_username" autofocus required />-->
+    <!--        </p>-->
+
+    <!--        <p>-->
+    <!--            <label for="id_register_password">密码：</label>-->
+    <!--            <input type="password" id="id_register_password" placeholder="密码" name="register_password" required>-->
+    <!--        </p>-->
+
+    <!--        <p>-->
+    <!--            <label for="id_register_password_retry">确认密码：</label>-->
+    <!--            <input type="password" id="id_register_password_retry" placeholder="确认密码" name="register_password_retry" required>-->
+    <!--        </p>-->
+    <!--        <input type="submit" value="确定">-->
+    <!--    </form>-->
+    <div id="appCapsule">
+
+        <div class="blog-post">
+
+            <div class="login-form ">
+
+                <div class="section  mb-5">
+                    <formsss>
+                        <form action="/register/" method="post">
+                            {% csrf_token %}
+                            <div class="form-group boxed">
+                                <div class="input-wrapper">
+                                    <div class="text-start text-primary  userNameTip" style="visibility:hidden;">用戶名/User Name</div>
+                                    <input onclick="autoShowTip(this)" type="text" class="form-control text-primary my-login-input" id="userName" name="register_username" placeholder="用戶名/User Name">
+                                    <i class="clear-input icon-cancel text-primary">
+
+                            </i>
+                                </div>
+                            </div>
+
+                            <div class="form-group boxed">
+                                <div class="input-wrapper">
+                                    <div class="text-start text-primary  paasswordTip" style="visibility:hidden;">密碼/Password</div>
+                                    <input onclick="autoShowTip(this)" type="password" class="form-control text-primary my-pass-input" id="paassword" name="register_password" placeholder="密碼/Password" autocomplete="off">
+                                    <i class="clear-input icon-cancel text-primary">
+
+                            </i>
+                                </div>
+                            </div>
+                            <div class="form-group boxed">
+                                <div class="input-wrapper">
+                                    <div class="text-start text-primary  passwordRepeatTip" style="visibility:hidden;">确认密碼/Password</div>
+                                    <input onclick="autoShowTip(this)" type="password" class="form-control text-primary my-pass-input" id="passwordRepeat" name="register_password_retry" placeholder="确认密碼/Password" autocomplete="off">
+                                    <i class="clear-input icon-cancel text-primary">
+
+                            </i>
+                                </div>
+                            </div>
+
+
+
+
+                            <!-- <div class="form-group boxed">
+                                <label class="text-primary text-center">出生日期（未滿18不得注冊）</label>
+                                <input placeholder="選擇日期.." id="start-time" class="mt-1 w-100 birthday flatpickr-input" type="text" readonly="readonly">
+                            </div> -->
+                            <div class="form-group boxed">
+                                <div class="input-wrapper">
+                                    <div class="text-primary" for="gender" style="">性別</div>
+                                    <select name="sex" class="form-control custom-select text-primary" id="gender" required="">
+
+                                <option select="" value="m" selected="">紳士</option>
+                                <option value="f">淑女</option>
+                                <option value="hg">武裝直升機</option>
+                                <option value="wsb">沃爾瑪購物袋</option>
+                                <option value="bot">機械人</option>
+                            </select>
+                                    <div class="valid-feedback">Looks good!</div>
+                                    <div class="invalid-feedback">Please choose a city.</div>
+                                </div>
+                            </div>
+
+                            <button onclick="startReg()" type="submit" class="btn btn-primary btn-block btn-lg">注冊</button>
+                        </form>
+                    </formsss>
+                    <p>{{ rlt }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <a href="../login/">返回登陸</a> -->
+
+    <!-- </div> -->
+    <div class="fab-button animate top-left dropdown" onclick="window.location.href='/index';" style="top: 10px;">
+        <a href="/login" class="fab" data-bs-toggle="dropdown">
+            <i name="add-outline" role="img" class="md icon-left-open" aria-label="add outline"></i>
+        </a>
+    </div>
+    <script src="/static/js/saved_resource"></script>
+    <script>
+        $(document).ready(function() {
+
+            fullScreenMode();
+        });
+    </script>
+    <script src="/static/js/flatpickr.min.js"></script>
+    <a class="bg-primary button goTop">
+        <i class="icon-up"></i>
+    </a>
+
+
+
+</body>
+
+</html>

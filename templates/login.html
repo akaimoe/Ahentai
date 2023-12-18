@@ -1,0 +1,119 @@
+<!--{#login/templates/login/login.html#}-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>login</title>
+    <meta name="referrer" content="never">
+    <meta name="viewport" content="width=device-width">
+
+    <style>
+        .loader {
+            background-color: transparent !important;
+        }
+
+        .loader img {
+            opacity: 1;
+        }
+    </style>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#db547c">
+    <!--    <base target="_blank">-->
+    <link rel="stylesheet" href="/static/css/splide.min.css">
+    <link rel="stylesheet" href="/static/css/style.min.css">
+    <link rel="stylesheet" href="/static/css/picstyle.min.css">
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/splide.min.js"></script>
+    <script src="/static/js/bootstrap.js"></script>
+    <script src="/static/js/ueserheader.min.js"></script>
+    <script type="text/javascript" src="/static/js/js(1)" async=""></script>
+</head>
+
+<body>
+    <!-- <div style="margin: 15% 40%;">
+        <h1>林肯四大头！</h1>
+        <form action="/login/" method="post">
+            {% csrf_token %}
+            <p>
+                <label for="id_login_username">用户名：</label>
+                <input type="text" id="id_login_username" placeholder="用户名" name="login_username" autofocus required />
+            </p>
+
+            <p>
+                <label for="id_login_password">密码：</label>
+                <input type="password" id="id_login_password" placeholder="密码" name="login_password" required>
+            </p>
+
+            <div class="form-row">
+                {{ form.captcha.errors }} {{ form.captcha.label_tag }} {{ form.captcha }}
+                <input type="hidden" name="next" value="{{ next }}">
+            </div>
+
+            <input type="submit" value="登陆" name="login">
+
+        </form>
+        <a href="../register/">没有账号？注册一个！</a>
+        <p style="font-size:14px; ">
+            什么？你问为什么没有密码找回？当然是没钱租短信邮箱服务辣！
+        </p>
+        <p>{{ rlt }}</p>
+    </div> -->
+
+
+    <div id="appCapsule">
+
+        <div class="blog-post">
+            <div class="login-form mt-1">
+                <div class="section">
+                    <img src="/static/source/login-bg.png" alt="image" class="form-image">
+                </div>
+                <div class="section mt-1 mb-5">
+                    <formsss>
+                        <form action="/login/" method="post">
+                            {% csrf_token %}
+                            <div class="form-group boxed">
+                                <div class="input-wrapper">
+                                    <input type="text" class="form-control text-primary my-login-input" id="email1" name="login_username" placeholder="用戶名/User Name">
+                                    <!-- <input type="text" id="id_login_username" placeholder="用户名" name="login_username" autofocus required /> -->
+                                    <i class="clear-input icon-cancel text-primary">
+
+                            </i>
+                                </div>
+                            </div>
+
+                            <div class="form-group boxed">
+                                <div class="input-wrapper">
+                                    <input type="password" class="form-control text-primary my-pass-input" id="password1" name="login_password" placeholder="密碼/Password" autocomplete="off">
+                                    <!-- <input type="password" id="id_login_password" placeholder="密码" name="login_password" required> -->
+                                    <i class="clear-input icon-cancel text-primary">
+
+                            </i>
+                                </div>
+                            </div>
+
+                            <div class="form-links mt-2">
+                                <div>
+                                    <a href="../register/" onclick="jumpUtils(&#39;pregister&#39;)" class="text-primary">注冊(開放)</a>
+                                </div>
+                                <div><a onclick="resPass()" class="text-muted">什么？你问为什么没有密码找回？当然是没钱租短信邮箱服务辣！</a></div>
+                            </div>
+
+                            <button onclick="StartLogin()" type="submit" class="btn btn-primary btn-block btn-lg">登錄</button>
+                        </form>
+                        <p>{{ rlt }}</p>
+                    </formsss>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

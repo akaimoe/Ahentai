@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#db547c">
+</head>
+<body>
+    <div style="margin: 15% 40%;">
+        <form action="/updateinfo/" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+                <p>
+                    <label for="comicname">漫画名：</label>
+                    <input type="text" id="comicname" placeholder="漫画名" name="comicname"  autofocus required />
+                </p>
+                    封面
+                    <input type="file" name="cover" id="cover" required />
+
+                <p>
+                    <label for="tag">作者：</label>
+                    <input type="text" id="author" placeholder="作者" name="author"  autofocus required />
+                </p>
+                <p>
+                    <label for="tag">Tag：</label>
+                    <input type="text" id="tag" placeholder="Tag" name="tag"  autofocus required />
+                </p>
+                <p>
+                    <label for="tag">简介：</label>
+                    <input type="text" id="introduction" placeholder="简介" name="introduction"  autofocus required />
+                </p>
+                    内容
+                    <input type="file" name="content" id="content" multiple="multiple" required /><br><br>
+<!--                <div class="img_wrap"></div><br>-->
+                <input type="submit" value="上传" name="login">
+
+        </form>
+    </div>
+</body>
+</html>
