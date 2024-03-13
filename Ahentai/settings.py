@@ -99,10 +99,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'Doujinshi_management_system',
-        'HOST': '127.0.0.1',
+        'HOST': 'db',
         'PORT': 3306, # 端口
         'USER': 'root',  # 数据库用户名
-        'PASSWORD': '19750912mm', # 数据库密码
+        'PASSWORD': '0d000721', # 数据库密码
     }
 }
 

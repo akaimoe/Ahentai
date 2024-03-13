@@ -1,22 +1,29 @@
-version: '3'
+version: "3"
 services:
   app:
+    restart: always
     build: .
-    container_name: Ahentai
+#    container_name: Ahentai
     command: bash -c "python3 manage.py makemigrations && python3 manage.py migrate && python3 manage.py runserver 0.0.0.0:8000"
     depends_on:
       - db
     volumes:
-      - /mydata/Ahentai/src:/src
+      - /mydata/Ahentai/media/content:/src/Ahentai/media/content
+      - /mydata/Ahentai/media/cover:/src/Ahentai/media/cover
+      - /mydata/Ahentai/media/source:/src/Ahentai/media/source
     ports:
       - "8000:8000"
-    restart: always
+
   db:
-    image: mysql:5.7
+    image: mysql:8.0
     volumes:
-      - /mydata/mysql:/var/lib/mysql
+      - /mydata/mysql_djg:/var/lib/mysql
     ports:
       - "3306:3306"
+    command:
+      --character-set-server=utf8mb4
+      --collation-server=utf8mb4_general_ci
+      --explicit_defaults_for_timestamp=true
     restart: always
     environment:
       - MYSQL_ROOT_PASSWORD=0d000721
