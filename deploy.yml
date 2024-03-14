@@ -1,0 +1,40 @@
+---
+- name: Upload and deploy Docker Compose file
+  hosts:  dev
+  user:  root
+  become: false
+
+  tasks:
+    - name: Upload Docker Compose file
+      copy:
+        src: /var/lib/jenkins/workspace/django_pipline/docker-compose.yml
+        dest: /home/jiangmingyi/item/docker-compose.yml
+
+    # - name: Ensure Docker Compose is installed  
+    #   command: docker-compose --version
+    #   register: docker_compose_check
+    #   ignore_errors: true
+
+    # - name: Install Docker Compose if not installed
+    #   apt:
+    #     name: docker-compose
+    #     state: present
+    #   when: docker_compose_check.rc != 0
+    - name: Down Docker Compose services
+      command: docker-compose down -v
+      args:
+        chdir: /home/jiangmingyi/item/
+
+    - name: Start Docker Compose services
+      # community.docker.docker_compose:
+      #   project_name: my_project
+      #   project_src: /home/jiangmingyi/item//docker-compose.yml
+      #   state: present
+      # docker_compose:
+      #   project_src: /home/jiangmingyi/item/
+      #   compose_file: docker-compose.yml
+      #   command: up
+#      command: docker-compose up
+#      args:
+#        chdir: /home/jiangmingyi/item/
+      shell: "cd /home/jiangmingyi/item && docker-compose up"
