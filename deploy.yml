@@ -37,4 +37,4 @@
 #      command: docker-compose up
 #      args:
 #        chdir: /home/jiangmingyi/item/
-      shell: "cd /home/jiangmingyi/item && docker-compose up"
+      shell: "cd /home/jiangmingyi/item && docker-compose up -d"
